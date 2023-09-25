@@ -50,7 +50,7 @@ def make_sigproc_header(cfreq, nchan, tsamp, bw, src_ra_deg=0.0, src_dec_deg=0.0
             'foff':ch_bw,
             'src_raj_deg': src_ra_deg,
             'src_dej_deg': src_dec_deg,
-            'source': src_name,
+            'source_name': src_name,
             }
     
     return header            
