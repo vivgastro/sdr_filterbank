@@ -125,7 +125,7 @@ def main():
         counter += 1
         if counter > Ncaptures:
             print("Closing output file")
-            of.close()
+            of.fin.close()
             print("Closing async read")
             sdr.cancel_read_async()
             print("Exiting the script")
