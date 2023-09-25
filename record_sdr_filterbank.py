@@ -1,7 +1,7 @@
 from rtlsdr import RtlSdr
 import numpy as np
 import matplotlib.pyplot as plt
-import time, sys
+import time, sys, scipy
 import argparse
 from sigproc import SigprocFile as SF
 import jdutil
