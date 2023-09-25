@@ -26,7 +26,7 @@ def nearest_pow_2(x, max_pow = 30):
     return powers_of_2[nearest]
     
 
-def make_sigproc_header(cfreq, nchan, tsamp, bw, src_ra_deg=0.0, src_dec_deg=0.0, src_name = "Fake", nbits=64):
+def make_sigproc_header(cfreq, nchan, tsamp, bw, src_ra_deg=0.0, src_dec_deg=0.0, src_name = "Fake", nbits=32):
     '''
     cfreq: float, MHz
     nchan: int, count
@@ -121,7 +121,7 @@ def main():
         print(f"Count {counter}/{Ncaptures} - Got {len(samps)} samps")
         f, t, spec = run_filterbank(samps, actual_tsamp, nchan)
         fil = spec.reshape(-1, tx).sum(axis=-1)
-        fil.tofile(of.fin)
+        fil.T.ravel().astype('float32').tofile(of.fin)
         counter += 1
         if counter > Ncaptures:
             print("Closing output file")
