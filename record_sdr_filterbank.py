@@ -109,7 +109,7 @@ def main():
 
     header = make_sigproc_header(Fcen, nchan, actual_tsamp, sdr.sample_rate * 1e-6)
 
-    of = SigprocFile(args.outname, 'wb', header)
+    of = SF(args.outname, 'wb', header)
     #of = open(outfile, 'wb')
 
     global counter
