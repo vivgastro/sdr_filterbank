@@ -57,7 +57,7 @@ def make_sigproc_header(cfreq, nchan, tsamp, bw, src_ra_deg=0.0, src_dec_deg=0.0
 
 
 def run_filterbank(signal, tsamp, nchan):
-    f, t, spec = scipy.signal.spectogram(signal, 
+    f, t, spec = scipy.signal.spectrogram(signal, 
                                          fs = 1 / tsamp,
                                          window = scipy.signal.window.tukey(nchan, 0.25), 
                                          nperseg = nchan,
